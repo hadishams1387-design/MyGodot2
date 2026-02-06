@@ -1,0 +1,92 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://soal1.gd" type="Script" id=1]
+[ext_resource path="res://Sun_1_02_2026_17_51_11.png" type="Texture" id=2]
+[ext_resource path="res://Mon_2_02_2026_21_45_21.png" type="Texture" id=3]
+[ext_resource path="res://Area2D.gd" type="Script" id=4]
+[ext_resource path="res://g.gd" type="Script" id=5]
+[ext_resource path="res://Tue_3_02_2026_06_33_11.png" type="Texture" id=6]
+[ext_resource path="res://Mon_2_02_2026_21_44_17.png" type="Texture" id=7]
+[ext_resource path="res://Mon_2_02_2026_21_43_54.png" type="Texture" id=8]
+[ext_resource path="res://Mon_2_02_2026_21_44_46.png" type="Texture" id=9]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 265.307, 70.2539 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 259.454, 79.6211 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 245.857, 77.8188 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 253.032, 78.3619 )
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 1 )
+next_scene = "res://,.tscn"
+wrong_scene = "res://menu1.tscn"
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 513.102, 300.575 )
+scale = Vector2( 1.01412, 0.584128 )
+texture = ExtResource( 2 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 783.105, 431.51 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 8 )
+
+[node name="g" type="Area2D" parent="Sprite2"]
+script = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2/g"]
+position = Vector2( 5.61206, -5.6123 )
+shape = SubResource( 1 )
+
+[node name="Sprite3" type="Sprite" parent="."]
+position = Vector2( 612.37, 432.261 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 7 )
+
+[node name="Area2D" type="Area2D" parent="Sprite3"]
+script = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite3/Area2D"]
+shape = SubResource( 2 )
+
+[node name="Sprite4" type="Sprite" parent="."]
+position = Vector2( 423.785, 433.023 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 9 )
+
+[node name="Area2D" type="Area2D" parent="Sprite4"]
+script = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite4/Area2D"]
+shape = SubResource( 3 )
+
+[node name="Sprite5" type="Sprite" parent="."]
+position = Vector2( 241.558, 436.499 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 3 )
+
+[node name="Area2D" type="Area2D" parent="Sprite5"]
+script = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite5/Area2D"]
+shape = SubResource( 4 )
+
+[node name="GreenFlash" type="ColorRect" parent="."]
+visible = false
+margin_right = 1027.0
+margin_bottom = 603.0
+color = Color( 0.337255, 1, 0.00392157, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite6" type="Sprite" parent="."]
+position = Vector2( 520, 200 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 6 )
