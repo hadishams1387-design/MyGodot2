@@ -1,0 +1,22 @@
+name: Build Godot Android
+
+on:
+  push:
+    branches: [ main ]  # هر وقت Commit جدید روی main بزنی اجرا می‌شود
+  workflow_dispatch:   # می‌توانی دستی هم اجرا کنی
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3  # دریافت کل پروژه از ریپازیتوری
+
+    - name: Setup Godot
+      uses: firebelley/setup-godot@v1  # اکشن آماده Godot
+      with:
+        godot-version: "3.2.3"         # نسخه Godot پروژه شما
+
+    - name: Build Android APK
+      run: |
+        godot --export "Android" ./MyGame.apk
